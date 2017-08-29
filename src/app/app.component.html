@@ -108,26 +108,12 @@
       <th>Email</th>
       <th>Joined</th>
     </tr>
-    <tr class="active">
-      <td>abby</td>
-      <td>bobo</td>
-      <td>tang</td>
+    <tr *ngFor="let coach of coaches">
+      <td>{{coach.name}}</td>
+      <td>{{coach.description}}</td>
+      <td>{{coach.picURL}}</td>
     </tr>
-    <tr>
-      <td>abby</td>
-      <td>bobo</td>
-      <td>tang</td>
-    </tr>
-    <tr class="warning">
-      <td>abby</td>
-      <td>bobo</td>
-      <td>tang</td>
-    </tr>
-    <tr>
-      <td>abby</td>
-      <td>bobo</td>
-      <td>tang</td>
-    </tr>
+    
 
   </table>
   </div>
@@ -149,21 +135,21 @@
    
         <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
+        <input type="text" [(ngModel)]="newcoach.name" class="form-control" id="exampleInputEmail1" placeholder="Name">
         </div>
         <div class="form-group">
-        <label for="exampleInputPassword1">Email</label>
-        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+        <label for="exampleInputPassword1">Description</label>
+        <input type="email" [(ngModel)]="newcoach.description" class="form-control" id="exampleInputPassword1" placeholder="Email">
         </div>
      
         <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="exampleInputPassword1">Pic URL</label>
+        <input type="text" [(ngModel)]="newcoach.picURL" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" (click)="saveCoach(newcoach)" class="btn btn-primary">Save changes</button>
       </div>
 
 <!-- /.modal-content -->
