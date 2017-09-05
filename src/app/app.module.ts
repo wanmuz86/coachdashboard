@@ -4,16 +4,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpService} from  './http.service'
-import {HttpModule} from '@angular/http'
- 
+import {HttpModule} from '@angular/http';
+import { CoachListComponent } from './coach-list/coach-list.component';
+import { CoachDetailComponent } from './coach-detail/coach-detail.component'
+import { RouterModule }   from '@angular/router';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CoachListComponent,
+    CoachDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+  {
+    path: 'coaches',
+    component: CoachListComponent
+  },
+  {
+    path: 'coach-detail',
+    component: CoachDetailComponent
+  }
+])
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
