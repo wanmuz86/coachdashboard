@@ -25,7 +25,7 @@ import { RouterModule }   from '@angular/router';
     component: CoachListComponent
   },
   {
-    path: 'coach-detail',
+    path: 'coach-detail/:id',
     component: CoachDetailComponent
   }
 ])

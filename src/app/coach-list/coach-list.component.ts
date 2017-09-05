@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from './../http.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-coach-list',
@@ -7,9 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoachListComponent implements OnInit {
 
-  constructor() { }
 
   ngOnInit() {
   }
 
+
+title = 'My Dashboard';
+  coaches 
+  newcoach = {
+  	name: '',
+  	description:'',
+  	image_url:''
+  }
+  constructor(public httpService : HttpService, public router : Router) { 
+
+this.httpService.getCoaches()
+  .subscribe(data => {
+    console.log(data)
+    this.coaches = data
+  })
+
+ }
+ saveCoach(newcoach){
+this.httpService.addCoach(newcoach)
+  .subscribe(data => {
+    console.log(data)
+
+    this.coaches.push(newcoach)
+    this.newcoach = {
+    name: '',
+    description:'',
+    image_url:''
+  } 
+  })
+}
+
+goToCoachDetail(id) {
+  this.router.navigate(['/coach-detail/', id]);
+}
 }

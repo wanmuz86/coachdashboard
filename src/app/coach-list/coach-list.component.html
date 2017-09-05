@@ -74,10 +74,10 @@
       <th>Email</th>
       <th>Joined</th>
     </tr>
-    <tr *ngFor="let coach of coaches">
+    <tr *ngFor="let coach of coaches" (click)="goToCoachDetail(coach._id)">
       <td>{{coach.name}}</td>
       <td>{{coach.description}}</td>
-      <td>{{coach.picURL}}</td>
+      <td><img src="{{coach.picURL}}" height="100px" width="100px"></td>
     </tr>
     
 

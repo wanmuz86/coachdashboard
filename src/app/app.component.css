@@ -89,26 +89,3 @@ body{
     background-color: #520338;
   }
 }
-
-.main-color-bg {
-  background-color: #e73262 !important ;
-  border-color:  #520338 !important;
-  color: #ffffff !important;
-}
-#header {
-background:#333333;
-  color:#ffffff;
-margin-bottom: 15px;
-  padding:15px;
-
-}
-#footer{
-  background:#333333;
-  color:#ffffff;
-  text-align:center;
-  padding:30px;
-  margin-top:30px;
-}
-.progress-bar{
-  background-color: #000000;
-}
